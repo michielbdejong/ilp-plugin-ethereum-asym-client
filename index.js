@@ -50,7 +50,7 @@ class Plugin extends PluginBtp {
     debug('got info. info=', info)
 
     this._peerAccount = info.ethereumAccount
-    const result = await this._machinomy.requireOpenChannel(
+    const result = await this._machinomy.channelManager.requireOpenChannel(
       this._account,
       this._peerAccount,
       this._minimumChannelAmount)

@@ -12,5 +12,8 @@
     "ilp-packet": "^2.1.2",
     "ilp-plugin-btp": "^1.1.5",
     "machinomy": "^1.5.0"
+  },
+  "devDependencies": {
+    "ilp-protocol-ildcp": "^1.0.0"
   }
 }

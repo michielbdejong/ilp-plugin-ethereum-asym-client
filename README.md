@@ -43,3 +43,14 @@ new PluginEthereumAsymClient({
   minimumChannelAmount: '10000', // amount with which to fund the channel
 })
 ```
+
+## Connecting to the testnet
+
+Follow the instructions from https://gist.github.com/cryptogoth/10a98e8078cfd69f7ca892ddbdcf26bc
+Run:
+```sh
+npm install
+ADDRESS=0xb9458d0076cc76d4568ebaac482ace6f1b30becb node scripts/test.js
+```
+
+You will run into https://github.com/sharafian/ilp-plugin-ethereum-asym-client/issues/1, which we're currently fixing!
