@@ -11,6 +11,7 @@ console.log('Connecting to Amundsen, settling over Machinomy Ethereum Rinkeby, u
 
 const plugin = new Plugin({
   address: process.env.ADDRESS,
+  // provider: 'https://rinkeby.infura.io/QIQwjA7rQvIVca6Z4Tjl',
   server: 'btp+wss://:token@amundsen.ilpdemo.org:1813'
 })
 console.log('connecting')

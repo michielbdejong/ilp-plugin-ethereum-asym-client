@@ -46,8 +46,9 @@ new PluginEthereumAsymClient({
 
 ## Connecting to the testnet
 
-* Follow the instructions from https://gist.github.com/cryptogoth/10a98e8078cfd69f7ca892ddbdcf26bc
-* Make sure to run `geth --rinkeby --rpc` instead of just `geth --rinkeby`
+* Taking into account the two side notes below, follow the instructions from https://gist.github.com/cryptogoth/10a98e8078cfd69f7ca892ddbdcf26bc
+* Sidenote 1: Make sure to run `geth --rinkeby --rpc` instead of just `geth --rinkeby`
+* Sidenote 2: You may want to use infura instead (TODO: figure out how to work around https://github.com/INFURA/infura/wiki/FAQ#q-how-do-i-sign-and-send-a-transaction-with-infura -  https://gist.github.com/raineorshine/c8b30db96d7532e15f85fcfe72ac719c might work?)
 * In another terminal window, run:
 ```sh
 npm install
