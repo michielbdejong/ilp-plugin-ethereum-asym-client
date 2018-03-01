@@ -5,7 +5,7 @@ const BtpPacket = require('btp-packet')
 const BigNumber = require('bignumber.js')
 const Web3 = require('web3')
 const Machinomy = require('machinomy').default
-const Payment = require('machinomy/lib/Payment').default
+const Payment = require('machinomy/dist/lib/Payment').default
 const PluginBtp = require('ilp-plugin-btp')
 
 async function _requestId () {
@@ -31,11 +31,9 @@ class Plugin extends PluginBtp {
 
   async _connect () {
     this._machinomy = new Machinomy(this._account, this._web3, {
-      engine: 'nedb',
-      databaseFile: this._db,
+      databaseUrl: 'nedb://' + this._db,
       minimumChannelAmount: this._minimumChannelAmount
     })
-
     const infoResponse = await this._call(null, {
       type: BtpPacket.TYPE_MESSAGE,
       requestId: await _requestId(),
