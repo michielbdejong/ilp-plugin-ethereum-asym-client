@@ -46,11 +46,12 @@ new PluginEthereumAsymClient({
 
 ## Connecting to the testnet
 
-Follow the instructions from https://gist.github.com/cryptogoth/10a98e8078cfd69f7ca892ddbdcf26bc
-Run:
+* Follow the instructions from https://gist.github.com/cryptogoth/10a98e8078cfd69f7ca892ddbdcf26bc
+* Make sure to run `geth --rinkeby --rpc` instead of just `geth --rinkeby`
+* In another terminal window, run:
 ```sh
 npm install
-ADDRESS=0xb9458d0076cc76d4568ebaac482ace6f1b30becb node scripts/test.js
+DEBUG=* ADDRESS=0xb9458d0076cc76d4568ebaac482ace6f1b30becb node scripts/test.js
 ```
 
-You will run into https://github.com/sharafian/ilp-plugin-ethereum-asym-client/issues/2, which we're currently fixing!
+You will run into https://github.com/sharafian/ilp-plugin-ethereum-asym-client/issues/4, which we're currently fixing!
