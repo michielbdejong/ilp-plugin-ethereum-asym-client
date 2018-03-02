@@ -10,7 +10,7 @@ if (typeof process.env.ADDRESS == 'undefined') {
 console.log('Connecting to Amundsen, settling over Machinomy Ethereum Rinkeby, using address:', process.env.ADDRESS)
 
 const plugin = new Plugin({
-  address: process.env.ADDRESS,
+  account: '0x' + process.env.ADDRESS.substring(2).toUpperCase(),
   // provider: 'https://rinkeby.infura.io/QIQwjA7rQvIVca6Z4Tjl',
   server: 'btp+wss://:token@amundsen.ilpdemo.org:1813'
 })
