@@ -2,16 +2,21 @@ const Plugin = require('..')
 const crypto = require('crypto')
 const IlDcp = require('ilp-protocol-ildcp')
 const IlpPacket = require('ilp-packet')
+const HDWalletProvider = require('truffle-hdwallet-provider')
 function sha256(preimage) { return crypto.createHash('sha256').update(preimage).digest() }
-if (typeof process.env.ADDRESS == 'undefined') {
-  console.error('Please set the ADDRESS env var to your Ethereum address on Rinkeby!')
+if (typeof process.env.RINKEBY_PROVIDER_URL == 'undefined' || typeof process.env.SECRET == 'undefined') {
+  console.error('Please set the RINKEBY_PROVIDER_URL and SECRET env vars!')
   process.exit(1)
 }
-console.log('Connecting to Amundsen, settling over Machinomy Ethereum Rinkeby, using address:', process.env.ADDRESS)
+
+const provider = new HDWalletProvider(process.env.SECRET, process.env.RINKEBY_PROVIDER_URL)
+console.log(provider)
+const address = provider.address
+console.log('Connecting to Amundsen, settling over Machinomy Ethereum Rinkeby, address:', address)
 
 const plugin = new Plugin({
-  address: process.env.ADDRESS,
-  // provider: 'https://rinkeby.infura.io/QIQwjA7rQvIVca6Z4Tjl',
+  address,
+  provider,
   server: 'btp+wss://:token@amundsen.ilpdemo.org:1813'
 })
 console.log('connecting')

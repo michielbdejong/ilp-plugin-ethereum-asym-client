@@ -44,11 +44,22 @@ new PluginEthereumAsymClient({
 })
 ```
 
-## Connecting to the testnet
+## Connecting to the testnet (easy way)
 
-* Taking into account the two side notes below, follow the instructions from https://gist.github.com/cryptogoth/10a98e8078cfd69f7ca892ddbdcf26bc
-* Sidenote 1: Make sure to run `geth --rinkeby --rpc` instead of just `geth --rinkeby`
-* Sidenote 2: You may want to use infura instead (TODO: figure out how to work around https://github.com/INFURA/infura/wiki/FAQ#q-how-do-i-sign-and-send-a-transaction-with-infura -  https://gist.github.com/raineorshine/c8b30db96d7532e15f85fcfe72ac719c might work?)
+* Sign up on https://infura.io and get your RINKEBY_PROVIDER_URL from them
+* That service doesn't support private accounts, so for that, choose a SECRET
+* Using this RINKEBY_PROVIDER_URL and SECRET, run:
+```sh
+export RINKEBY_PROVIDER_URL=https://rinkeby.infura.io/QIQwjA7rQvIVca6Z4Tjl
+export SECRET=ietah3IeZ0Zun4Se2daf3ieVia8Xeengahx8quo0
+npm install
+DEBUG=* node scripts/test.js
+```
+
+## Connecting to the testnet (hard way)
+
+* Follow the instructions from https://gist.github.com/cryptogoth/10a98e8078cfd69f7ca892ddbdcf26bc
+* Make sure to run `geth --rinkeby --rpc` instead of just `geth --rinkeby`
 * In another terminal window, run:
 ```sh
 npm install

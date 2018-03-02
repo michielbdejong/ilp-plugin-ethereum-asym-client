@@ -14,6 +14,7 @@
     "machinomy": "^1.6.0"
   },
   "devDependencies": {
-    "ilp-protocol-ildcp": "^1.0.0"
+    "ilp-protocol-ildcp": "^1.0.0",
+    "truffle-hdwallet-provider": "0.0.3"
   }
 }
