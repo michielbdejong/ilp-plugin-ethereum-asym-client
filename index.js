@@ -47,7 +47,7 @@ class Plugin extends PluginBtp {
     const info = JSON.parse(infoResponse.protocolData[0].data.toString())
     debug('got info. info=', info)
 
-    this._peerAccount = info.ethereumAccount
+    this._peerAccount = '0x' + info.ethereumAccount.substring(2).toUpperCase()
     const result = await this._machinomy.channelManager.requireOpenChannel(
       this._account,
       this._peerAccount,
