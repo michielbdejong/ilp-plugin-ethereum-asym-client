@@ -11,7 +11,8 @@ if (typeof process.env.RINKEBY_PROVIDER_URL == 'undefined' || typeof process.env
 
 const provider = new HDWalletProvider(process.env.SECRET, process.env.RINKEBY_PROVIDER_URL)
 console.log(provider)
-const account = '0x' + provider.address.substring(2).toUpperCase()
+// const account = '0x' + provider.address.substring(2).toUpperCase()
+const account = '0x' + provider.address.substring(2).toLowerCase()
 console.log('Connecting to Amundsen, settling over Machinomy Ethereum Rinkeby, account:', account)
 
 const plugin = new Plugin({
